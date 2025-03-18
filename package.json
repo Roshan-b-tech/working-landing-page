@@ -1,11 +1,12 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "modern-landing-page",
+  "description": "A modern landing page with contact form functionality using EmailJS",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -25,7 +25,7 @@ export const Contact: React.FC = () => {
 
       await emailjs.sendForm(
         'service_9zpyj85', // Replace with your EmailJS service ID
-        'template_aqxvxwp', // Replace with your EmailJS template ID
+        'template_i8cq0gf', // Replace with your EmailJS template ID
         form.current,
         '8Y3CHItag2qgiEafy' // Replace with your EmailJS public key
       );
@@ -48,55 +48,55 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-6">
+    <section className="py-12 sm:py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block p-4 bg-blue-50 rounded-full mb-4 transform transition-transform hover:scale-110 hover:rotate-12">
-              <MessageSquare className="w-12 h-12 text-blue-600 transition-colors hover:text-blue-700" />
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-block p-3 sm:p-4 bg-blue-50 rounded-full mb-3 sm:mb-4">
+              <MessageSquare className="w-8 h-8 sm:w-12 sm:h-12 text-blue-600" />
             </div>
-            <h2 className="text-4xl font-bold mb-4 hover:text-blue-600 transition-colors">Get in Touch</h2>
-            <p className="text-gray-600 hover:text-gray-800 transition-colors">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-4">Get in Touch</h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
           </div>
 
-          <form ref={form} onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-8 space-y-6 transform transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+          <form ref={form} onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 space-y-4 sm:space-y-6">
             <div className="group">
-              <label className="block text-sm font-medium text-gray-700 mb-2 transition-colors group-hover:text-blue-600">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Name
               </label>
               <input
                 type="text"
                 name="user_name"
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md text-sm sm:text-base"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="John Doe"
               />
             </div>
             <div className="group">
-              <label className="block text-sm font-medium text-gray-700 mb-2 transition-colors group-hover:text-blue-600">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Email
               </label>
               <input
                 type="email"
                 name="user_email"
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md text-sm sm:text-base"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="john@example.com"
               />
             </div>
             <div className="group">
-              <label className="block text-sm font-medium text-gray-700 mb-2 transition-colors group-hover:text-blue-600">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Message
               </label>
               <textarea
                 name="message"
                 required
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md resize-none"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-400 group-hover:shadow-md resize-none text-sm sm:text-base"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Your message here..."
@@ -104,19 +104,19 @@ export const Contact: React.FC = () => {
             </div>
 
             {status.error && (
-              <div className="text-red-500 text-sm animate-pulse">{status.error}</div>
+              <div className="text-red-500 text-xs sm:text-sm animate-pulse">{status.error}</div>
             )}
 
             {status.submitted && (
-              <div className="text-green-500 text-sm animate-bounce">Message sent successfully!</div>
+              <div className="text-green-500 text-xs sm:text-sm animate-bounce">Message sent successfully!</div>
             )}
 
             <button
               type="submit"
               disabled={status.submitting}
-              className={`w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform ${status.submitting
-                  ? 'opacity-70 cursor-not-allowed'
-                  : 'hover:bg-blue-700 hover:scale-[1.02] hover:shadow-xl active:scale-95'
+              className={`w-full bg-blue-600 text-white py-3 sm:py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform text-sm sm:text-base ${status.submitting
+                ? 'opacity-70 cursor-not-allowed'
+                : 'hover:bg-blue-700 hover:scale-[1.02] hover:shadow-xl active:scale-95'
                 }`}
             >
               {status.submitting ? (
@@ -124,7 +124,7 @@ export const Contact: React.FC = () => {
               ) : (
                 <>
                   Send Message
-                  <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
                 </>
               )}
             </button>
